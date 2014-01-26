@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Backbone.js Project 1</title>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <div id="app-views"></div>
+    <script src="vendor.js"></script>
+    <script src="app.js"></script>
+    <script>
+    // This jQuery function is called when the HTML document is fully loaded.
+    $(document).ready(function(){
+      // Load our HelloView object
+      HelloView = require("views/hello");
+      GreetingModel = require("models/greeting")
+      
+      // Create our greeting model and set the greeting
+      var greetingModel = new GreetingModel();
+      greetingModel.set("greeting", "Hello World!")
+      
+      // Create a new HelloView with a Backbone Model
+      var helloView = new HelloView({model: greetingModel});
+
+      // Render the view inside the #app-views div
+      $("#app-views").append(helloView.render().el)
+
+    });
+    </script>
+  </body>
+</html>

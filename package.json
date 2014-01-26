@@ -1,0 +1,20 @@
+{
+  "name": "Backbone-Project-1",
+  "description": "Learn Basic Backbone",
+  "author": "Mark Johnson",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "sass-brunch": "~1.7.2",
+    "css-brunch": ">= 1.0 < 1.8",
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "auto-reload-brunch": ">= 1.0 < 1.8",
+    "coffee-script-brunch": "~1.7.3",
+    "handlebars-brunch": "~1.7.7"
+  }
+}
