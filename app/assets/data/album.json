@@ -1,0 +1,15 @@
+{
+  "name": "TRON: Legacy",
+  "artist": "Daft Punk",
+  "description": "Tron: Legacy is the soundtrack to the 2010 film of the same name, released by Walt Disney Records on December 3, 2010. It is the first film score by French music duo Daft Punk.",
+  "tracks": [
+    {"order": 1, "name": "Overture", "time": "2:28"},
+    {"order": 1, "name": "The Grid", "time": "1:36"},
+    {"order": 1, "name": "The Son of Flynn", "time": "1:35"},
+    {"order": 1, "name": "Recognizer", "time": "2:37"},
+    {"order": 1, "name": "Armory", "time": "2:03"},
+    {"order": 1, "name": "Arena", "time": "1:33"},
+    {"order": 1, "name": "Rinzler", "time": "2:17"},
+    {"order": 1, "name": "The Game Has Changed", "time": "2:25"}
+  ]
+}
