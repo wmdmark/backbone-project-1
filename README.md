@@ -10,7 +10,7 @@ After completing this project you should understand and apply:
 
 ### Install the build tool
 
-Brunch is a build tool for client-side application development and it includes the ability to run a local server along with a slew of other nice features that we'll be taking advantage of in this project.
+[Brunch](http://brunch.io/) is a build tool for client-side application development and it includes the ability to run a local server along with a slew of other nice features that we'll be taking advantage of in this project.
 
 #### Installation Instructions
 * Installing on [Windows](http://www.axelscript.com/2013/02/06/installing-brunch-io-on-windows/)
