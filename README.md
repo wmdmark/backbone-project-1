@@ -28,11 +28,13 @@ To get started:
 1. [Install Git](https://help.github.com/articles/set-up-git). 
 2. [Create a fork](https://help.github.com/articles/fork-a-repo) of this repository and pull it to your computer.
 3. Run the project on your computer using the following commands in your terminal:
+
 ```shell
 cd ~/<path-to-your-project-folder>
 npm install
 brunch w -s
 ```
+
 Once you've done that, you should be able to open a brower to `http://localhost:3333/` and see the text "Hello World!" displayed on the screen.
 
 ### Exploring the code
