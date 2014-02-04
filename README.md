@@ -16,12 +16,14 @@ After completing this project you should understand and apply:
 * Installing on [Windows](http://www.axelscript.com/2013/02/06/installing-brunch-io-on-windows/)
 * Installing on [Mac](http://blog.stevenlu.com/2012/05/04/brunchio-on-mac-osx/)
 
+You'll also need to [install SASS](http://www.hongkiat.com/blog/getting-started-saas/) (which requires Ruby).
 
 ### Install and run the project template
 
 You'll be submitting this project using a source code control sytemn called Git. The code itself will be hosted on [Github](http://github.com). This will allow easy review of code.
 
 I've created a template repository to get you started with Brunch and Backbone.
+
 
 To get started:
 
