@@ -13,11 +13,11 @@
       // Load our HelloView object
       HelloView = require("views/hello");
       GreetingModel = require("models/greeting")
-      
+
       // Create our greeting model and set the greeting
       var greetingModel = new GreetingModel();
-      greetingModel.set("greeting", "Hello World!")
-      
+      greetingModel.set("greeting", "Howdy Everyone!")
+
       // Create a new HelloView with a Backbone Model
       var helloView = new HelloView({model: greetingModel});
 
