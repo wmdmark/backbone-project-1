@@ -1,8 +1,62 @@
-// We're using SASS so we can next styles and do lots of other cool things!
-// Read more here: http://sass-lang.com/
+$blue-color: #87CEEB;
+$font: Arial, Helvetica, sans-serif;
+
 #app-views {
-  h1 {
-    font-family: sans-serif;
-    color: #333;
-  }
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	max-width: 600px;
+  	hr{
+  			margin: 0px;
+  			margin-left: 7px;
+  			margin-right: 7px;
+  			border-color: SkyBlue;
+  	}
+  	#album-info {
+		background-color: #D3D3D3;
+		padding-top: 17px;
+		padding-bottom: 17px;
+		img {
+					width: 130px;
+					height: 130px;
+					float: left;
+					padding-left: 17px;
+					padding-right: 17px;}
+		h1 {
+					font-family: $font;
+					font-size: 20pt;
+					margin-top: 0px;
+					margin-bottom: 0px;}
+		h4 {
+					font-family: $font;
+					font-weight: lighter;
+					font-size: 12pt;
+					font-style: italic;
+					margin-top: 0px;}
+		p {
+					font-family: $font;
+					font-size: 10pt;
+					padding-right: 15px;}
+	}#track-info {
+			display: block;
+			background-color: black;
+			color: white;
+			font-family: $font;
+			font-size: 14px;
+			ul {
+							margin-top: 0px;
+							padding-top: 7px;
+							padding-bottom: 7px;
+							padding-left: 0px;
+							list-style-type: none;}
+			li {
+							padding: 5px;}
+			.order {
+							padding: 5px;
+							color: $blue-color;}
+			.time {
+							float:right;
+							color: $blue-color;
+							padding-right: 2px;}
+							}
 }

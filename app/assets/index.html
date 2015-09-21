@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Backbone.js Project 1</title>
@@ -7,24 +8,49 @@
     <div id="app-views"></div>
     <script src="vendor.js"></script>
     <script src="app.js"></script>
+    <script src="../../vendor/handlebars-v4.0.2.js"></script>
+    <script src="../../vendor/backbone-min.js"></script>
+    <script src="../../vendor/jquery-2.0.3.min.js"></script>
+    <script src="../../vendor/underscore-min.js"></script>
+
+    <!-- Setup our templates -->
+    <script id="CDTemplate" type="text/x-handlebars-template">
+      <div id="album-info">
+        <img src="./data/tronCover.jpg">
+        <h1>{{ name }} </h1>
+        <h4>{{ artist }} </h4>
+        <p>{{ description }}</p>
+      </div>
+      <div id="track-info">
+        <ul>{{#each tracks}}
+            <li><span class="order">{{ order }}</span><span class="name">{{ name }}</span><span class="time">{{ time }}</span></li>
+            <hr>
+            {{/each}}
+        </ul>
+      </div>
+    </script>
+
     <script>
-    // This jQuery function is called when the HTML document is fully loaded.
-    $(document).ready(function(){
-      // Load our HelloView object
-      HelloView = require("views/hello");
-      GreetingModel = require("models/greeting")
+      // This jQuery function is called when the HTML document is fully loaded.
+      $(document).ready(function(){
+        // Load our HelloView object
+        //HelloView = require("views/hello");   
+        //GreetingModel = require("models/greeting") 
 
-      // Create our greeting model and set the greeting
-      var greetingModel = new GreetingModel();
-      greetingModel.set("greeting", "Howdy Everyone!")
+        AlbumView = require("views/hello");;
+        AlbumModel = require("models/greeting");
 
-      // Create a new HelloView with a Backbone Model
-      var helloView = new HelloView({model: greetingModel});
+        
+        var albumModel = new AlbumModel();
+        albumModel.fetch();
 
-      // Render the view inside the #app-views div
-      $("#app-views").append(helloView.render().el)
+        // Create a new HelloView with a Backbone Model
+        //var helloView = new HelloView({model: greetingModel});
+        var albumView = new AlbumView({model: albumModel});
 
-    });
+        // Render the view inside the #app-views div
+        //$("#app-views").append(helloView.render().el)
+      });
     </script>
   </body>
 </html>
