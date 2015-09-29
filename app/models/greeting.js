@@ -9,7 +9,7 @@ Greeting = Backbone.Model.extend({
 //(Backbone will traw to map every item into this model)
 AlbumModel = Backbone.Model.extend({
     url: '/data/album.json'
-  });
+});
 
 // Make the model available to require imports
 //module.exports = Greeting

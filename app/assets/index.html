@@ -8,12 +8,10 @@
     <div id="app-views"></div>
     <script src="vendor.js"></script>
     <script src="app.js"></script>
-    <script src="../../vendor/handlebars-v4.0.2.js"></script>
-    <script src="../../vendor/backbone-min.js"></script>
-    <script src="../../vendor/jquery-2.0.3.min.js"></script>
-    <script src="../../vendor/underscore-min.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.6.2.min.js"></script>
 
     <!-- Setup our templates -->
+    <!-- 
     <script id="CDTemplate" type="text/x-handlebars-template">
       <div id="album-info">
         <img src="./data/tronCover.jpg">
@@ -24,11 +22,11 @@
       <div id="track-info">
         <ul>{{#each tracks}}
             <li><span class="order">{{ order }}</span><span class="name">{{ name }}</span><span class="time">{{ time }}</span></li>
-            <hr>
             {{/each}}
         </ul>
       </div>
     </script>
+    -->
 
     <script>
       // This jQuery function is called when the HTML document is fully loaded.
@@ -37,7 +35,16 @@
         //HelloView = require("views/hello");   
         //GreetingModel = require("models/greeting") 
 
-        AlbumView = require("views/hello");;
+
+        Parse.initialize("3Fh2rJ9bqEWNVmNaYHYx9LpPLo9mpUxEp0jRKPCh", "gtt05pz8sTD2qq2OxYOAyM1aCtHbiPpOcACwHyzx");
+
+        var ParseObject = Parse.Object.extend("ParseObject");
+        var parseObject = new ParseObject();
+        // parseObject.save({foo: "bar"}).then(function(object) {
+        //   alert("yay! it worked");
+        // });
+
+        AlbumView = require("views/album");
         AlbumModel = require("models/greeting");
 
         
@@ -50,6 +57,8 @@
 
         // Render the view inside the #app-views div
         //$("#app-views").append(helloView.render().el)
+
+        
       });
     </script>
   </body>

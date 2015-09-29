@@ -1,0 +1,13 @@
+<div id="album-info">
+    <img src="./data/tronCover.jpg">
+    <h1>{{ name }} </h1>
+    <h4>{{ artist }} </h4>
+    <p>{{ description }}</p>
+</div>
+<div id="track-info">
+    <ul>{{#each tracks}}
+        <li><span class="order">{{ order }}</span><span class="name">{{ name }}</span>
+        <span class="time">{{ time }}</span></li>
+        {{/each}}
+    </ul>
+</div>
