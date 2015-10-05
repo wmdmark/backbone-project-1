@@ -1,0 +1,33 @@
+$blue-color: #87CEEB;
+$font: Arial, Helvetica, sans-serif;
+
+#app-views {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+	.album {
+    display: inline-block;
+    max-width: 250px;
+    margin: 30px;
+    padding: 20px;
+    vertical-align: top;
+    background: WhiteSmoke;
+    border: 1px dotted $blue-color;
+		img {
+			width: 250px;
+			height: 250px;
+		}
+		h1 {
+			font-family: $font;
+  		font-size: 20pt;
+      margin-top: 10px;
+      text-align: center;
+		}
+		p {
+			font-family: $font;
+		  font-size: 10pt;	
+      margin-top: 15px;
+      line-height: 20px;
+  	}
+	}
+}
