@@ -1,7 +1,11 @@
+<div class="album-grid">
 {{#each albums}}
+<a href="/{{id}}">
 <div class="album">
-	<h1>{{ name }}</h1>
-	<img src="{{ image }}">
-	<p>{{ description }}</p>
+	<img src="{{ attributes.image }}">
+	<h1>{{ attributes.name }}</h1>
+	<p>{{ attributes.description }}</p>
 </div>
+</a>
 {{/each}}
+</div>

@@ -13,32 +13,66 @@
     <script>
       // This jQuery function is called when the HTML document is fully loaded.
       $(document).ready(function(){
+        // backbone router 
 
-        Parse.initialize("3Fh2rJ9bqEWNVmNaYHYx9LpPLo9mpUxEp0jRKPCh", "gtt05pz8sTD2qq2OxYOAyM1aCtHbiPpOcACwHyzx");
+        var Router = Backbone.Router.extend({
+          Album: null,
+          HomeView: null,
+          TrackView: null,
 
-        Album = require("views/album-grid");
+          initialize: function() {
+            Parse.initialize("3Fh2rJ9bqEWNVmNaYHYx9LpPLo9mpUxEp0jRKPCh", "gtt05pz8sTD2qq2OxYOAyM1aCtHbiPpOcACwHyzx");
 
+            var Album = Parse.Object.extend("Album");
 
-        AlbumListView = require("views/album-grid");
+            AlbumListView = require("views/album-grid");
+            this.HomeView = AlbumListView;
 
-        var albumListView = new AlbumListView({model: new Album()});
-        $("#app-views").append(albumListView.render().el)
+            TrackView = require("views/trackview");
+            this.TrackView = TrackView;
 
-        // ***** Album View ***** //
+            this.Album = Album;
+            this.Container = $("#app-views");
+          },
 
-        //AlbumView = require("views/album");
-        //AlbumModel = require("models/greeting");
-        
-        //var albumModel = new AlbumModel();
-        //albumModel.fetch();
+          routes: {
+            "": "home",
+            ":album": "tracks" 
+          },
 
-        // Create a new HelloView with a Backbone Model
-        //var helloView = new HelloView({model: greetingModel});
-        //var albumView = new AlbumView({model: albumModel});
+          home: function() {
+            if (this.homeView == null) {
+              this.homeView = new this.HomeView({model: new this.Album()});
+            }
 
-        // Render the view inside the #app-views div
-        //$("#app-views").append(helloView.render().el)
-        
+            this.Container.html(this.homeView.render().el)
+          },
+          
+          tracks: function(album) {
+            if (this.trackView == null) {
+              console.log("album", album);
+              var query = new Parse.Query(this.Album);
+              query.get(album, {
+                success: function(object) {
+                  // Successfully retrieved the object.
+                  console.log(object);
+                  router.trackView = new TrackView(object);
+                  router.Container.html(router.trackView.render().el);
+                },
+                error: function(error) {
+                  alert("Error: " + error.code + " " + error.message);
+                }
+              });
+            } 
+          }
+        });
+
+        var router = new Router;
+
+        Backbone.history.start({  
+          pushState: true,
+        });
+
       });
     </script>
   </body>
