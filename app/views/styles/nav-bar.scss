@@ -1,0 +1,19 @@
+#app-nav {
+	.navbar-default {
+		background-color: lightGray;
+		border-color: white;
+	}
+	img {
+		margin-top: 10px;
+		float: right;
+	}
+	p {
+		margin-top: 10px;
+		float: right;
+		padding-right: 30px;
+	}
+	.logout-button img {
+		width: 85px;
+		height: 25px;
+	}
+}

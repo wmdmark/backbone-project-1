@@ -22,7 +22,6 @@ var AlbumListView = Backbone.View.extend({
     render: function() {
     // Load our template from the templates folder
       var template = require("./templates/album-grid")
-      console.log(this.albums)
       this.$el.html(template({albums: this.albums}));
       return this;
     }

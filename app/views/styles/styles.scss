@@ -15,8 +15,9 @@ $font: Arial, Helvetica, sans-serif;
 				width: 100px;
 				height: 100px;
 				float: left;
-				padding-left: 17px;
+				margin-left: 17px;
 				padding-right: 17px;
+				padding-bottom: 17px;
 			}
 			h1 {
 				font-family: $font;
@@ -36,7 +37,8 @@ $font: Arial, Helvetica, sans-serif;
 				font-size: 10pt;
 				padding-right: 15px;
 			}
-		}#track-info {
+		}
+		#track-info {
 			display: block;
 			background-color: black;
 			color: white;

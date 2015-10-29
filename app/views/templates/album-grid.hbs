@@ -1,11 +1,13 @@
-<div class="album-grid">
+<div class="row album-grid">
 {{#each albums}}
-<a href="/{{id}}">
-<div class="album">
-	<img src="{{ attributes.image }}">
-	<h1>{{ attributes.name }}</h1>
-	<p>{{ attributes.description }}</p>
+<div class="col-md-4 col-sm-6 col-xs-12">
+	<a href="/{{id}}" style="text-decoration: none">
+	<div class="album">
+		<img src="{{ attributes.image }}">
+		<h1>{{ attributes.name }}</h1>
+		<p>{{ attributes.description }}</p>
+	</div>
+	</a>
 </div>
-</a>
 {{/each}}
 </div>

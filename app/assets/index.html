@@ -1,19 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Backbone.js Project 1</title>
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
-    <div id="app-views"></div>
+    <!-- facebook setup -->
+    <div class="container">
+      <div id="app-nav"></div>
+      <div id="app-views"></div>
+    </div>
     <script src="vendor.js"></script>
     <script src="app.js"></script>
-    <script src="//www.parsecdn.com/js/parse-1.6.2.min.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      // Initialize Parse
+      Parse.initialize("3Fh2rJ9bqEWNVmNaYHYx9LpPLo9mpUxEp0jRKPCh", 
+        "gtt05pz8sTD2qq2OxYOAyM1aCtHbiPpOcACwHyzx");
+
+      window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({ // this line replaces FB.init({
+          appId      : '735261033246303', // Facebook App ID
+          status     : true,  // check Facebook Login status
+          cookie     : true,  // enable cookies to allow Parse to access the session
+          xfbml      : true,  // initialize Facebook social plugins on the page
+          version    : 'v2.4' // point to the latest Facebook Graph API version
+        });
+
+        NavBar = require("views/nav-bar");
+        var navBar = new NavBar();
+        $("#app-nav").html(navBar.render().el);
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=735261033246303";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <script>
       // This jQuery function is called when the HTML document is fully loaded.
       $(document).ready(function(){
         // backbone router 
+
+        //render navbar
 
         var Router = Backbone.Router.extend({
           Album: null,
