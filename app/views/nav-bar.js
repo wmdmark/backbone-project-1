@@ -13,11 +13,8 @@ var NavBar = Backbone.View.extend({
     this.CurrentUser = Parse.User.current();
 
     if (this.CurrentUser) {
-      this.loadFacebookUserData(function(result) {
-          console.log("I am ", result);
-          this.CurrentUser.set("name", result);
-          this.render();
-      });
+      var self = this;
+      this.loadFacebookUserData();
     }
   },
 
@@ -52,12 +49,13 @@ var NavBar = Backbone.View.extend({
     },
 
     loadFacebookUserData: function( callback ) {
+      var self = this;
       if(this.CurrentUser) {
         FB.api('/me', function(response) {
           if(response && !response.error) {
-            var name = response.name;
+            self.CurrentUser.set(response);
+            self.render();
           }
-          callback(name);
         });
       }
     },
@@ -67,6 +65,7 @@ var NavBar = Backbone.View.extend({
 
       var template = require("./templates/nav-bar");
       var userData = this.CurrentUser ? this.CurrentUser.toJSON() : null;
+      console.log("render: ", userData);
       this.$el.html(template({user: userData}));
       return this;
   	},

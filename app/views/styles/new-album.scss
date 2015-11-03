@@ -1,0 +1,69 @@
+.album-view {
+	.wrapper {
+		.image {
+			float: left;
+			width: 20%;
+			img {
+				position: relative;
+				width: 20vw;
+				height: 20vw;
+				border: 1px solid lightGray;
+			}
+			.imageButton {
+				clear: left;
+				float: left;
+				width: 20vw;
+				margin-top: 15px;
+			}
+		}
+		.Details {
+			float: right;
+			width: 65%;
+			input {
+				width: 100%;
+			}
+			.SaveAlbum {
+				float: right;
+				margin-top: 25px;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			
+		}
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+	.Tracks {
+		clear:left;
+		padding-top: 50px;
+		.input-container {
+			width: 100%;
+			margin-right: 0px;
+			.input-item {
+				float: left;
+				input {
+					width: 100%;
+				}
+				&.order {
+					width: 10%;
+				}
+				&.name {
+					width: 50%;
+				}
+				&.duration {
+					width: 20%;
+				}
+				&.button {
+					width: 20%;
+					margin-top: 35px;
+					.SaveTrack {
+						float: right;
+					}
+				}
+			}
+		}
+	}
+}

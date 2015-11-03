@@ -1,19 +1,26 @@
 #app-nav {
 	.navbar-default {
+		position: relative;
+		vertical-align: center;
+		padding-top: 10px;
 		background-color: lightGray;
 		border-color: white;
-	}
-	img {
-		margin-top: 10px;
-		float: right;
-	}
-	p {
-		margin-top: 10px;
-		float: right;
-		padding-right: 30px;
-	}
-	.logout-button img {
-		width: 85px;
-		height: 25px;
+		img {
+			float: right;
+		}
+		p {
+			float: right;
+			padding-right: 20px;
+		}
+		button {
+			float: right;
+			padding: 3px 10px 3px;
+			margin-right: 20px;
+		}
+		.logout-button {
+			width: 85px;
+			height: 25px;
+			float: right;
+		}
 	}
 }

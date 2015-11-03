@@ -1,8 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
+  	<a class="grid-home" href="/">Albums</a>
   	{{#if user}}
-	  	<a class="logout-button"><img src="./data/flogout.png"></a>
-	  	<p>Welcome {{ user.attributes.name }}</p>
+	<a class="logout-button">Sign out</a>
+	<a href="/newalbum"><button type="button">Add Album</button></a>
+	<p>Welcome, {{ user.name }}</p>
 	{{else}}
 		<a class="login-button"><img src="./data/fconnect.gif"></a>
 	{{/if}}

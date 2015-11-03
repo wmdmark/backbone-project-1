@@ -6,42 +6,36 @@ $font: Arial, Helvetica, sans-serif;
 }
 
 #app-views {
-  background-image: url("backgroundpattern.jpg");
-  background-repeat: no repeat;
-  div.album:hover {
-    img {
-      opacity: .5;
-    }
-    h1, p {
-      display: block;
-    }
-  }
-	.album {
-    margin-top: 50px;
-		img {
-      padding: 15px;
-			width: 100%;
-			height: 100%;
-		}
-		h1 {
-      display: none;
-			font-family: $font;
-  		font-size: 10pt;
-      color: #A8A8A8;
-      margin-top: 0px;
-      padding: 0px 15px 0px;
-      font-weight: bold;
-      text-align: center;
-		}
-		p {
-      display: none;
-			font-family: $font;
-		  font-size: 10pt;	
-      line-height: 20px;
-      color: #A8A8A8;
-      font-style: italic;
-      padding: 0px 15px 0px;
-      text-align: center;
+  .album-grid {
+    text-align: center;
+    .column {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+      text-align: left;
+    	.album {
+    		img {
+          padding: 15px;
+    			width: 100%;
+    			height: 100%;
+    		}
+    		h1 {
+    			font-family: $font;
+      		font-size: 20pt;
+          color: black;
+          margin-top: 0px;
+          padding: 0px 15px 0px;
+          font-weight: bold;
+    		}
+    		p {
+    			font-family: $font;
+    		  font-size: 10pt;	
+          line-height: 20px;
+          color: #A8A8A8;
+          font-style: italic;
+          padding: 0px 15px 0px;
+      	}
+      }
   	}
-	}
+  }
 }

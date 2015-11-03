@@ -23,10 +23,9 @@
       window.fbAsyncInit = function() {
         Parse.FacebookUtils.init({ // this line replaces FB.init({
           appId      : '735261033246303', // Facebook App ID
-          status     : true,  // check Facebook Login status
           cookie     : true,  // enable cookies to allow Parse to access the session
           xfbml      : true,  // initialize Facebook social plugins on the page
-          version    : 'v2.4' // point to the latest Facebook Graph API version
+          version    : 'v2.5' // point to the latest Facebook Graph API version
         });
 
         NavBar = require("views/nav-bar");
@@ -68,11 +67,15 @@
 
             this.Album = Album;
             this.Container = $("#app-views");
+
+            NewAlbum = require("views/new-album");
+            this.NewAlbum = NewAlbum;
           },
 
           routes: {
             "": "home",
-            ":album": "tracks" 
+            "newalbum": "newAlbum",
+            ":album": "tracks"
           },
 
           home: function() {
@@ -93,12 +96,15 @@
                   console.log(object);
                   router.trackView = new TrackView(object);
                   router.Container.html(router.trackView.render().el);
-                },
-                error: function(error) {
-                  alert("Error: " + error.code + " " + error.message);
                 }
               });
             } 
+          },
+
+          newAlbum: function() {
+            console.log("new Album button clicked");
+            router.newAlbum = new this.NewAlbum();
+            router.Container.html(router.newAlbum.render().el);
           }
         });
 
